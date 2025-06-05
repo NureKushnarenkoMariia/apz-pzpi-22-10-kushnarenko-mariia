@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lifepaw-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lifepaw-app
+  template:
+    metadata:
+      labels:
+        app: lifepaw-app
+    spec:
+      containers:
+        - name: lifepaw-app
+          image: mariakushnarenko/lifepaw
+          ports:
+            - containerPort: 5104
+          resources:
+            requests:
+              cpu: 100m
+            limits:
+              cpu: 200m
