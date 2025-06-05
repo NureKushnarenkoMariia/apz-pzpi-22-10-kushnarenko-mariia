@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        >
+
+        <Button
+            android:id="@+id/button_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="← Назад"
+            android:backgroundTint="#6200EE"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="16dp"
+            />
+
+        <TextView
+            android:id="@+id/text_sensor_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Тип сенсора: "
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#6A1B9A"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:id="@+id/text_sensor_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Статус: "
+            android:textSize="18sp"
+            android:textColor="#333333"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/text_sensor_install_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Дата встановлення: "
+            android:textSize="18sp"
+            android:textColor="#333333"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/text_sensor_linked_animal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Прив’язка до: "
+            android:textSize="18sp"
+            android:textColor="#333333"
+            android:layout_marginBottom="20dp" />
+
+        <TextView
+            android:id="@+id/text_sensor_temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Температура: "
+            android:textSize="22sp"
+            android:textColor="#4CAF50"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:id="@+id/text_sensor_humidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Вологість: "
+            android:textSize="22sp"
+            android:textColor="#2196F3" />
+
+    </LinearLayout>
+</ScrollView>

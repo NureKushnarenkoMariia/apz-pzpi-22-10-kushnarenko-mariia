@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">LifePaw</string>
+    <string name="temperature">Температура: %.1f°C</string>
+    <string name="humidity">Вологість: %.1f%%</string>
+</resources>
+
