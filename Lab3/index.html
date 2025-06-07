@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Medical Records</title>
+  <link rel="stylesheet" href="Styles/styles.css">
+</head>
+<body>
+  <div class="language-bar">
+    <button id="back-button-top" onclick="goBack()" style="display:none;">←</button>
+    <button onclick="switchLanguage('en')">EN</button>
+    <button onclick="switchLanguage('uk')">UA</button>
+  </div>
+
+  <!-- Login Container -->
+  <div id="login" class="container">
+    <h2 id="login-title">Login</h2>
+    <label for="email" id="label-email">Email:</label>
+    <input type="email" id="email" placeholder="Enter your email" autocomplete="username"/>
+
+    <label for="password" id="label-password">Password:</label>
+    <input type="password" id="password" placeholder="Enter your password" autocomplete="current-password"/>
+
+    <label for="role" id="label-role">Role:</label>
+    <select id="role">
+      <option value="doctor" id="option-user">Doctor</option>
+      <option value="admin" id="option-admin">Admin</option>
+    </select>
+
+    <button onclick="login()" id="login-button">Login</button>
+  </div>
+
+  <!-- Doctor Dashboard -->
+  <div id="doctor-dashboard" class="container" style="display:none;">
+    <h2 id="panel-title1">Doctor Panel</h2>
+    
+    <div class="role-doctor-only">
+      <button class="toggle-button" onclick="openNewRecord()">Create Record</button>
+    </div>
+
+    <div id="doctor-record-list"></div>
+
+    <div class="role-doctor-only">
+      <h3>Animal Info (View Only)</h3>
+      <div id="doctor-animal-info"></div>
+    </div>
+  </div>
+
+  <!-- Admin Panel -->
+  <div id="panel" class="container" style="display:none;">
+    <h2 id="panel-title2">Admin Panel</h2>
+    
+    <div class="role-admin-only">
+      <button class="toggle-button" onclick="openNewRecord()">Create Medical Record</button>
+      <button onclick="addAnimal()">Add Animal</button>
+      <button onclick="editSensors()">Manage Sensors</button>
+      <button onclick="generateReports()">View Reports</button>
+      <button onclick="manageUsers()">Manage Users</button>
+    </div>
+
+    <div id="admin-record-list"></div>
+    <div id="admin-animal-list" class="role-admin-only"></div>
+    <div id="admin-user-list" class="role-admin-only"></div>
+    <div id="admin-sensor-list" class="role-admin-only"></div>
+  </div>
+
+  <!-- Overlay for modal -->
+  <div id="modal-overlay" onclick="closePanel()"></div>
+
+  <!-- Modal for Adding/Editing Record -->
+  <div id="record-panel" class="container" role="dialog" aria-modal="true" aria-labelledby="record-title">
+    <input type="hidden" id="record-id">
+
+    <h2 id="record-title">Add Medical Record</h2>
+
+    <label id="label-animal-id">Animal ID:</label>
+    <input type="text" id="animal-id" />
+
+    <label id="label-date">Date:</label>
+    <input type="date" id="date" />
+
+    <label id="label-description">Description:</label>
+    <textarea id="description" rows="3"></textarea>
+
+    <label id="label-user-id">User ID:</label>
+    <input type="text" id="user-id" />
+
+    <button onclick="submitRecord()" id="submit-button">Submit</button>
+  </div>
+
+  <script src="Script/script.js"></script>
+</body>
+</html>

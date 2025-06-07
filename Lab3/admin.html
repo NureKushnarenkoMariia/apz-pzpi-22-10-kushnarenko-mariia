@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="Styles/styles.css">
+</head>
+<body>
+  <div class="language-bar">
+    <button onclick="switchAdminLanguage('en')">EN</button>
+    <button onclick="switchAdminLanguage('uk')">UA</button>
+    <button id="logout-button" onclick="logout()">← Logout</button>
+  </div>
+
+  <div class="container">
+    <h2 id="admin-title">Admin Panel</h2>
+
+    <div id="admin-nav" class="admin-nav">
+      <button id="animals-button" onclick="showSection('animals')">Animals</button>
+      <button id="employees-button" onclick="showSection('users')">Employees</button>
+      <button id="sensors-button" onclick="showSection('sensors')">Sensors</button>
+      <button id="medical-button" onclick="showSection('medical')">Medical Reports</button>
+      <button id="reports-button" onclick="showSection('reports')">Reports</button>
+    </div>
+
+    <div id="section-container" style="display:none;">
+      <!-- Dynamic content will load here -->
+
+       <div id="admin-dashboard" class="container" >
+          
+          <div class="role-doctor-only">
+            <button id="new-button" class="toggle-button" onclick="openNewRecord()">Create new</button>
+            <button id="back-button" class="toggle-button" onclick="backButton()">Back</button>
+          </div>
+
+          <div id="admin-record-list"></div>
+        </div>
+
+    </div>
+  </div>
+
+  <div id="modal-overlay" onclick="closePanel()"></div>
+
+  <!-- Modal for Adding/Editing Record -->
+  <div id="record-panel" class="container" role="dialog" aria-modal="true" aria-labelledby="record-title">
+    <input type="hidden" id="record-id">
+    <h2 id="record-title">Add Medical Record</h2>
+
+    <label id="label-animal-id">Animal ID:</label>
+    <input type="text" id="animal-id" />
+
+    <label id="label-date">Date:</label>
+    <input type="date" id="date" />
+
+    <label id="label-description">Description:</label>
+    <textarea id="description" rows="3"></textarea>
+
+    <label id="label-user-id">User ID:</label>
+    <input type="text" id="user-id" />
+
+    <button onclick="submitRecord()" id="submit-button">Submit</button>
+  </div>
+
+  <script src="Script/admin.js"></script>
+  <script src="Script/script.js"></script>
+</body>
+</html>
